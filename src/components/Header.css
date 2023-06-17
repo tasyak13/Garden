@@ -1,0 +1,59 @@
+header {
+    display: flex;
+
+    height: 167px;
+}
+
+img.logo-img {
+    height: 72px;
+    width: 72px;
+    margin-top: 19px;
+    margin-left: 28px;
+}
+
+img.basket-img {
+    width: 26px;
+    height: 29px;
+}
+
+button.button-header {
+    width: 125px;
+    height: 49px;
+    margin-top: 30px;
+    margin-left: 39px;
+
+    background-color: #339933;
+
+    border: none;
+    border-radius: 5px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+ul.header-list {
+    display: flex;
+    justify-content: space-between;
+    width: 331px;
+    margin-left: 594px;
+    margin-top: 44px;
+
+    list-style-type: none;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.basket {
+    margin-top: 40px;
+    margin-right: 30px;
+    margin-left: 175px;
+}

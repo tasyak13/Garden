@@ -1,0 +1,8 @@
+section.sale-new-season {
+    height: 600px;
+
+    display: flex;
+    justify-content: space-around;
+
+    background-color: #A1E2EB;
+}

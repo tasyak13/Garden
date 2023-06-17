@@ -1,0 +1,7 @@
+section.coupon {
+    height: 476px;
+
+    background: linear-gradient(to right, #006300,  #339933);
+
+    display: flex;
+}

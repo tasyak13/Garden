@@ -2,7 +2,61 @@ section.sale-new-season {
     height: 600px;
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
     background-color: #A1E2EB;
+}
+
+div.sale {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 130px;
+    padding-left: 50px;
+}
+
+h3.sale-title {
+    height: 104px;
+    margin: 0;
+    margin-top: 3px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 104px;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+p.sale-new-season {
+    margin: 0;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 63px;
+    line-height: 82px;
+    color: #FFFFFF;
+}
+
+button.sale-button {
+    width: 155px;
+    height: 82px;
+    margin-top: 60px;
+
+    background-color: #FFFFFF;
+    border-radius: 13px;
+    border: none;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 32px;
+    color: #2D2D2D;
+}
+
+img.sale-img {
+    margin-top: -60px;
 }

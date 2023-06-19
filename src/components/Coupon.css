@@ -5,3 +5,74 @@ section.coupon {
 
     display: flex;
 }
+
+img.coupon-img {
+    margin-top: 27px;
+    margin-left: 91px;
+}
+
+div.coupon-title {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+}
+
+p.coupon-subtitle {
+    margin: 0;
+    margin-top: 44px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 103px;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+p.coupon-text {
+    margin: 0;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 55px;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+input.coupon-input {
+    width: 423px;
+    height: 75px;
+    border-radius: 25px;
+    border: none;
+    margin-top: 46px;
+
+    background: #FFFFFF;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #6C6C6C;
+    padding-left: 50px;
+}
+
+button.coupon-button {
+    display: block;
+    width: 473px;
+    height: 75px;
+    border: 2px solid #FFFFFF;
+    border-radius: 25px;
+    background: none;
+    margin-top: 30px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28.7392px;
+    line-height: 34px;
+    color: #FFFFFF;
+}

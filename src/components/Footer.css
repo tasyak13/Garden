@@ -48,6 +48,7 @@ ul.footer-contacts-social-list {
     display: flex;
     list-style-type: none;
     gap: 35px;
+    text-align: center;
 }
 
 p.footer-contacts-social-text {
@@ -107,5 +108,5 @@ p.footer-address-text {
 
 .maps {
     width: 1381px;
-height: 525px;
+    height: 525px;
 }

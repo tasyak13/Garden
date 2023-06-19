@@ -1,3 +1,111 @@
 footer.footer {
     height: 933px;
 }
+
+div.footer-address-contacts {
+    display: flex;
+    padding-left: 32px;
+}
+
+div.footer-contacts {
+    width: 811px;
+}
+
+div.footer-address {
+    width: 564px;
+}
+
+p.footer-contacts-title,
+p.footer-address-title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    color: #000000;
+
+    text-align: left;
+
+    margin-top: 48px;
+    margin-bottom: 25px;
+}
+
+p.footer-contacts-phone {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 91px;
+    color: #000000;
+
+    text-align: left;
+
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+
+ul.footer-contacts-social-list {
+    display: flex;
+    list-style-type: none;
+    gap: 35px;
+}
+
+p.footer-contacts-social-text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    color: #000000;
+
+    margin-top: 10px;
+    margin-bottom: 47px;
+}
+
+p.footer-address-link {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 52px;
+    text-decoration-line: underline;
+    color: #000000;
+
+    text-align: left;
+
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+p.footer-address-work-hours {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+
+    text-align: left;
+
+    margin-top: 0;
+    margin-bottom: 2px;
+}
+
+p.footer-address-text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31px;
+    color: #000000;
+
+    text-align: left;
+
+    margin-top: 0;
+    margin-bottom: 65px;
+}
+
+.maps {
+    width: 1381px;
+height: 525px;
+}

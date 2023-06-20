@@ -1,0 +1,239 @@
+* {
+    box-sizing: border-box;
+}
+
+section.shoping-cart {
+    min-height: 1088px;
+}
+
+h3.shoping-cart-title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    color: #000000;
+
+    margin-top: 3px;
+    margin-left: 31px;
+    margin-bottom: 16px;
+}
+
+p.shoping-cart-back {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    color: #000000;
+
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 34px;
+}
+
+div.shoping-cart-basket {
+    display: flex;
+    flex-direction: row;
+}
+
+div.shop {
+    display: flex;
+    flex-direction: column;
+}
+
+div.shoping-cart-content {
+    width: 824px;
+    height: 247px;
+    border-top: 1px solid #A7A7A7;
+}
+
+ul.shoping-cart-list {
+    list-style-type: none;
+
+    padding-top: 40px;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+li.shoping-cart-item {
+    display: flex;
+}
+
+img.shoping-cart-img {
+    width: 192px;
+    height: 166px;
+
+    margin-right: 29px;
+}
+
+p.shoping-cart-text {
+    width: 318px;
+    margin-top: 5px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    color: #3A3A3A;
+}
+
+div.shoping-cart-button {
+    display: flex;
+    width: 140px;
+    height: 40px;
+    margin-top: 71px;
+
+    border: 1px solid #000000;
+    border-radius: 12px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 40px;
+    color: #000000;
+}
+
+p.shoping-cart-value {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 40px;
+    color: #000000;
+
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+div.shoping-cart-button button {
+    border: 0;
+    background-color: #FFFFFF;
+    margin-left: 20px;
+}
+
+div.shoping-cart-cost {
+    display: flex;
+    align-items: center;
+}
+
+p.shoping-cart-cost-with-sale {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 52px;
+    color: #000000;
+}
+
+span.shoping-cart-cost-with-sale {
+    font-size: 20px;
+    line-height: 26px;
+}
+
+p.shoping-cart-cost-without-sale {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    text-decoration-line: line-through;
+    color: #8B8B8B;
+
+    margin-left: 70px;
+}
+
+.close {
+    width: 14px;
+    height: 14px;
+    margin-left: 68px;
+}
+
+div.shoping-cart-order {
+    width: 496px;
+    height: 445px;
+    margin-left: 60px;
+
+    border: 2px solid #000000;
+    border-radius: 21px;
+}
+
+div.shoping-cart-order {
+    padding: 25px;
+}
+
+p.shoping-cart-order-title {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    color: #000000;
+}
+
+div.shoping-cart-order-total-cost {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 42px;
+}
+
+p.shoping-cart-order-total {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    color: #000000;
+    align-self: center;
+}
+
+p.shoping-cart-order-cost {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 42px;
+    color: #000000;
+}
+
+input.shoping-cart-order-input {
+    width: 446px;
+    height: 73px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    margin-top: 27px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #929292;
+    padding-left: 25px;
+}
+
+button.shoping-cart-order-button {
+    width: 446px;
+    height: 76px;
+    margin-top: 25px;
+    background: #339933;
+    border-radius: 17px;
+    border: none;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+    color: #FFFFFF;
+}

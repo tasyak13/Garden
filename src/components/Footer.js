@@ -5,6 +5,10 @@ import { ReactComponent as WhatsApp }  from "../img/whatsApp.svg";
 
 
 function Footer() {
+    const styles = {
+        border: '0',
+   };
+
     return (
         <footer className="container footer">
             <div className="footer-address-contacts">
@@ -31,7 +35,9 @@ function Footer() {
                     <p className="footer-address-text">24 hours a day</p>
                 </div>
             </div>
-            <div>Карта</div>
+            <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.410459266542!2d13.375101599999999!3d52.5079105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851cbdd6cfe0f%3A0xb4b0903f299decf1!2zTGlua3N0cmHDn2UgMi84LiBFdGFnZSwgMTA3ODUgQmVybGluLCDQk9C10YDQvNCw0L3QuNGP!5e0!3m2!1sru!2sru!4v1687257604970!5m2!1sru!2sru" width="1345" height="525" style={styles} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </footer>
     )
 }

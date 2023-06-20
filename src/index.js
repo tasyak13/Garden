@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Error from './pages/Error';
 import Categories from './pages/Categories';
+import Basket from './pages/Basket';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
   {
     path: "/categories",
     element: <Categories />
+    ,
+  },
+  {
+    path: "/basket",
+    element: <Basket />
     ,
   },
   {

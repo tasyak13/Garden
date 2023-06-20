@@ -10,6 +10,7 @@ import {
 import Error from './pages/Error';
 import Categories from './pages/Categories';
 import Basket from './pages/Basket';
+import Products from './pages/Products';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,11 @@ const router = createBrowserRouter([
   {
     path: "/basket",
     element: <Basket />
+    ,
+  },
+  {
+    path: "/allproducts",
+    element: <Products />
     ,
   },
   {

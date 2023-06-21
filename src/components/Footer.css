@@ -106,7 +106,9 @@ p.footer-address-text {
     margin-bottom: 65px;
 }
 
-.maps {
+iframe {
     width: 1381px;
     height: 525px;
+
+    margin-left: 30px;
 }

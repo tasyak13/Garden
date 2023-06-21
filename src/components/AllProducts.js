@@ -7,13 +7,13 @@ function AllProducts() {
         <section className="container all-products">
             <h3 className="all-products-title">All products</h3>
             <div className="all-products-choice">
-                <p>Price</p>
-                <input type="number"></input>
-                <input type="number"></input>
-                <p>Discounted items</p>
-                <input type="radio"></input>
-                <p>Sorted</p>
-                <select>
+                <p className="all-products-choice-text">Price</p>
+                <input className="all-products-choice-input" type="number" placeholder="from"></input>
+                <input className="all-products-choice-input" type="number" placeholder="to"></input>
+                <p className="all-products-choice-text discount">Discounted items</p>
+                <input className="all-products-choice-radio" type="radio"></input>
+                <p className="all-products-choice-text sort">Sorted</p>
+                <select className="all-products-choice">
                     <option>by default</option>
                     <option>ascending</option>
                 </select>

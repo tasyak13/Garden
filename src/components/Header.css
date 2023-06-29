@@ -1,7 +1,7 @@
 header {
     display: flex;
 
-    height: 167px;
+    min-height: 167px;
 }
 
 img.logo-img {
@@ -46,7 +46,7 @@ ul.header-list {
 }
 
 a {
-    font-family: 'Montserrat';
+    /* font-family: 'Montserrat'; */
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -60,4 +60,41 @@ a {
     margin-top: 40px;
     margin-right: 30px;
     margin-left: 175px;
+}
+
+@media (max-width: 1440px) {
+    header {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    ul.header-list {
+        margin-left: 50px;
+    }
+
+    .basket {
+        margin-right: 20px;
+        margin-left: 75px;
+    }
+  }
+
+@media (max-width: 800px) {
+    ul.header-list {
+        width: 150px;
+        flex-direction: column;
+        margin-top: 0;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 550px) {
+    img.logo-img {
+        display: none;
+    }
+}
+
+@media (max-width: 440px) {
+    button.button-header {
+        width: 125px;
+}
 }

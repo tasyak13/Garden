@@ -43,7 +43,7 @@ p.coupon-text {
 }
 
 input.coupon-input {
-    width: 423px;
+    width: 473px;
     height: 75px;
     border-radius: 25px;
     border: none;
@@ -76,3 +76,53 @@ button.coupon-button {
     line-height: 34px;
     color: #FFFFFF;
 }
+
+@media (max-width: 1240px) {
+    section.coupon {
+        justify-content: space-around;
+    }
+
+    div.coupon-title {
+        margin-left: 0;
+    }
+
+    img.coupon-img {
+        margin-left: 0;
+    }
+}    
+
+@media (max-width: 960px) {
+    img.coupon-img {
+        display: none;
+    }
+} 
+
+@media (max-width: 500px) {
+    input.coupon-input {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    button.coupon-button {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    p.coupon-subtitle {
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 78px;
+
+        margin-left: 20px;
+    }
+
+    p.coupon-text {
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 52px;
+
+        margin-left: 20px;
+    }
+} 

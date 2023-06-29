@@ -11,10 +11,10 @@ function Header() {
             <img className="logo-img" src={logo}></img>
             <Link to={"/categories"}><button className="button-header">Catalog</button></Link>
             <ul className="header-list">
-                <Link to={"/"}><li>Main Page</li></Link>
-                <Link to={"/allproducts"}><li>All products</li></Link>
-                <Link to={"/error"}><li>All sales</li></Link> 
-                {/* To make link to page allproducts with choice "discounted items" */}
+                <li><Link to={"/"}>Main Page</Link></li>
+                <li><Link to={"/allproducts"}>All products</Link></li>
+                <li><Link to={"/error"}>All sales</Link></li>
+                {/* To make link to page allproducts w</li></Link>ith choice "discounted items" */}
             </ul>
             <Link to={"/basket"}><Basket className="basket" /></Link>
         </header>

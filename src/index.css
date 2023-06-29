@@ -13,6 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', sans-serif;
 }
 
 code {
@@ -29,3 +30,8 @@ code {
   font-family: 'Montserrat', sans-serif;
 }
 
+@media (max-width: 1440px) {
+  .container {
+    width: 100%;
+  }
+}

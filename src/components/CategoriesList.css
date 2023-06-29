@@ -42,3 +42,9 @@ p.categoties-list-text {
     margin-top: 20px;
 }
 
+@media (max-width: 1440px) {
+    ul.categoties-list-list {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}

@@ -1,5 +1,5 @@
 section.list-sale {
-    height: 532px;
+    min-height: 532px;
 }
 
 ul.list-sale-list {
@@ -78,4 +78,10 @@ p.list-sale-text {
 
     margin: 0;
     margin-top: 10px;
+}
+
+@media (max-width: 1440px) {
+    ul.list-sale-list {
+        flex-wrap: wrap;
+    }
 }

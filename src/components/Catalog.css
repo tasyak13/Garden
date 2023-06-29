@@ -54,6 +54,10 @@ li img.catalog-img {
     margin-bottom: 20px;
 }
 
+li.catalog-item {
+    width: 318px;
+}
+
 a.catalog-item-link {
     font-family: 'Montserrat';
     font-style: normal;
@@ -63,3 +67,19 @@ a.catalog-item-link {
     color: #000000;
 }
 
+@media (max-width: 1440px) {
+    ul.catalog-list {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    section.catalog {
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    h3.catalog-heading {
+        margin-right: 40px;
+    }
+}

@@ -1,3 +1,8 @@
 section.not-found {
-    height: 625px;
+    height: auto;
+}
+
+section.not-found img {
+    width: 100%;
+    height: auto;
 }

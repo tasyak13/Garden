@@ -12,6 +12,7 @@ import Categories from './pages/Categories';
 import Basket from './pages/Basket';
 import Products from './pages/Products';
 import Product from './pages/Product';
+import ListOfProducts from './pages/ListOfProducts';
 
 const router = createBrowserRouter([
   {
@@ -40,15 +41,20 @@ const router = createBrowserRouter([
     ,
   },
   {
-    path: "/product",
+    path: "/products/:productID",
     element: <Product />
     ,
   },
   {
-    path: "/user/:userID",
-    element: <></>
+    path: "/categories/:categoriesID",
+    element: <ListOfProducts />
     ,
   },
+  {
+    path: "/all",
+    element: <Products />
+    ,
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

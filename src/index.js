@@ -13,6 +13,7 @@ import Basket from './pages/Basket';
 import Products from './pages/Products';
 import Product from './pages/Product';
 import ListOfProducts from './pages/ListOfProducts';
+import Example from './pages/Example';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
   {
     path: "/all-products",
     element: <Products />
+    ,
+  },
+  {
+    path: "/ex",
+    element: <Example />
     ,
   },
   {

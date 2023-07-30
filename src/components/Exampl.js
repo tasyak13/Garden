@@ -49,11 +49,6 @@ function Exampl() {
         }
       };
 
-      const handleSortChange = (e) => {
-        const value = e.target.value;
-        setSortOrder(value);
-      };
-
     return (
         <section className="container all-products">
             <h3 className="all-products-title">All products</h3>

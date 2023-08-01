@@ -2,6 +2,11 @@ import "./AllProducts.css"
 import axios from "axios";
 import React from "react";
 import { useState } from 'react';
+import {
+  Link
+} from "react-router-dom";
+import { useSearchParams } from 'react-router-dom';
+
 
 
 const baseURL = "http://localhost:3333/products/all";
@@ -9,45 +14,88 @@ const baseURL = "http://localhost:3333/products/all";
 function Exampl() {
     const [post, setPost] = React.useState(null);
     const [input1, setInput1] = useState(0);
-    const [input2, setInput2] = useState(1000000);
-    const [showDiscount, setShowDiscount] = useState(false);
+    const [input2, setInput2] = useState(1000);
+    const [searchParams] = useSearchParams();
+    const [showDiscount, setShowDiscount] = useState(!!searchParams.get('showDiscount'));
     const [filteredData, setFilteredData] = useState([]);
+    const [sortOrder, setSortOrder] = useState('a');
+    
+    const [onlySales, setOnlySales] = useState();
+
+    const filterData = (post, showDiscount, input1, input2, sortOrder) => {
+      if (!post) {
+        return
+      }
+      console.log("Error")
+      const filteredArray = post
+        .filter(id => id.price >= input1 && id.price <= input2)
+        .sort((a, b) => {
+          if (sortOrder === 'a') {
+            return (a.discont_price || a.price) - (b.discont_price || b.price);
+          } else {
+            return (b.discont_price || b.price) - (a.discont_price || a.price);
+          }
+        });
+console.log(showDiscount)
+          if (showDiscount) {
+            const filtered = filteredArray.filter((product) => product.discont_price > 0);
+            setFilteredData(filtered);
+          } else {
+            setFilteredData(filteredArray);
+          }
+        };
+  
     
     React.useEffect(() => {
+        setOnlySales(!!searchParams.get('showDiscount'))
+        setShowDiscount(true)
+        console.log("This is", !!searchParams.get('showDiscount'))
         axios.get(baseURL).then((response) => {
-        setPost(response.data);
+          setPost(response.data);
+          setFilteredData(response.data)
+          filterData(response.data, showDiscount, input1, input2, sortOrder)
         });
     }, []);
 
+    // React.useEffect(() => {
+    //     if(post) {
+    //         filterData(false)
+    //     }
+    // }, [post]);
+
     if (!post) return null;
+
+
 
     const handleInput1Change = (e) => {
         let value = parseInt(e.target.value);
         value = isNaN(value) ? 0 : Math.max(0, value);
         setInput1(value);
+        filterData(post, showDiscount, value, input2, sortOrder);
       };
     
       const handleInput2Change = (e) => {
         let value = parseInt(e.target.value);
-        value = isNaN(value) ? 100000 : Math.max(0, value);
+        value = isNaN(value) ? 1000 : Math.max(0, value);
         setInput2(value);
-      };
-    
-      const filteredArray = post.filter(id => id.price >= input1 && id.price <= input2);
+        filterData(post, showDiscount, input1, value, sortOrder);
+      }; 
 
       const handleCheckboxChange = (e) => {
         setShowDiscount(e.target.checked);
-        filterData(e.target.checked);
+        filterData(post, e.target.checked, input1, input2, sortOrder);
       };
+
+      const handleSortChange = (e) => {
+        const value = e.target.value;
+        setSortOrder(value);
+        // onSort(value);
+        filterData(post, e.target.checked, input1, input2, value);
+  };
     
-    const filterData = (isChecked) => {
-        if (isChecked) {
-          const filtered = filteredArray.filter((product) => product.discont_price > 0);
-          setFilteredData(filtered);
-        } else {
-          setFilteredData(filteredArray);
-        }
-      };
+
+
+
 
     return (
         <section className="container all-products">
@@ -58,15 +106,19 @@ function Exampl() {
                 <input className="all-products-choice-input" value={input1} onChange={handleInput1Change} min="0"></input>
                 <input className="all-products-choice-input" value={input2} onChange={handleInput2Change} min="0"></input>
                 </div>
+                
+                {!onlySales &&
                 <div className="all-products-choice-checkbox">
                 <p className="all-products-choice-text discount">Discounted items</p>
-                <input className="all-products-choice-radio" type="checkbox" onChange={handleCheckboxChange}></input>
-                </div>
+                <input className="all-products-choice-radio" type="checkbox" value={showDiscount} onChange={handleCheckboxChange}></input>
+                </div>}
+                
+               
                 <div className="all-products-choice-sort">
                 <p className="all-products-choice-text sort">Sorted</p>
-                <select className="all-products-choice">
-                    <option>by default</option>
-                    <option>ascending</option>
+                <select className="all-products-choice" value={sortOrder} onChange={handleSortChange}>
+                    <option value="a">by default</option>
+                    <option value="z">ascending</option>
                 </select>
                 </div>
             </div>

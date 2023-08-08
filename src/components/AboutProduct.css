@@ -4,6 +4,7 @@
 
 section.product {
     min-height: 1039px;
+
 }
 
 h3.product-title {
@@ -21,6 +22,7 @@ h3.product-title {
 
 div.product-card {
     display: flex;
+    position: relative;
 }
 
 img.product-img {

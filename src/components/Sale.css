@@ -42,7 +42,7 @@ p.sale-new-season {
     text-align: left;
 }
 
-button.sale-button {
+a.sale-button {
     width: 155px;
     height: 82px;
     margin-top: 60px;
@@ -55,7 +55,7 @@ button.sale-button {
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
-    line-height: 32px;
+    line-height: 78px;
     color: #2D2D2D;
 }
 

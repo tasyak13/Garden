@@ -5,17 +5,22 @@ import {useParams} from "react-router-dom";
 import axios from "axios";
 import React from "react";
 import {Link} from "react-router-dom";
+import { useDispatch } from 'react-redux'
+import { allCartAction } from "../store/reducer/cartReducer";
 
 function ProductsList() {
     let {categoriesID} = useParams();
     const baseURL = `http://localhost:3333/categories/${categoriesID}`;
 
     const [post, setPost] = React.useState(null);
-    
+
+    const dispatch = useDispatch();
+
+    const addToCart = (p) => dispatch(allCartAction(p));
 
     React.useEffect(() => {
         axios.get(baseURL).then((response) => {
-        setPost(response.data);
+            setPost(response.data);
         });
     }, []);
 
@@ -43,62 +48,37 @@ function ProductsList() {
                 </div>
             </div>
             <ul className="all-products-list">
-            {post.data.map((id) => {
-                        return <li className="all-products-list">
-                    <img src={"http://localhost:3333" + id.image} className="all-products-img"></img>
+            {post.data.map((p) => {
+                if(p.discont_price === null) {
+                    return <li className="all-products-list">
+                    <img src={"http://localhost:3333" + p.image} className="all-products-img"></img>
                     <div className="all-products-costs">
-                        <p className="all-products-cost-with-sale">199<span className="all-products-cost-with-sale">$</span></p>
-                        <p className="all-products-cost-without-sale">{id.price}</p>
-                        <p className="all-products-sale">-7%</p>
+                        <p className="all-products-cost-with-sale">{p.price}<span className="all-products-cost-with-sale">$</span></p>
+                        <p className="all-products-cost-without-sale"></p>
+                        <p className="all-products-sale"></p>
                     </div>
-                    <div className="all-products-product"><Link to={"/products/" + id.id}>{id.title}</Link></div>
+                    <div className="all-products-product"><Link to={"/products/" + p.id}>{p.title}</Link></div>
+                    <button className="btn"
+                            onClick={() => addToCart(p)} 
+                    >Add to cart</button>
                 </li>
+                }
+                else {
+                    return <li className="all-products-list">
+                    <img src={"http://localhost:3333" + p.image} className="all-products-img"></img>
+                    <div className="all-products-costs">
+                        <p className="all-products-cost-with-sale">{p.discont_price}<span className="all-products-cost-with-sale">$</span></p>
+                        <p className="all-products-cost-without-sale">{p.price}$</p>
+                        <p className="all-products-sale">{(((p.price - p.discont_price) / p.price) * 100).toFixed(2)}%</p>
+                    </div>
+                    <div className="all-products-product"><Link to={"/products/" + p.id}>{p.title}</Link></div>
+                    <button className="btn"
+                            onClick={() => addToCart(p)} 
+                    >Add to cart</button>
+                </li>
+                }
+                        
                 })}
-                {/* <li className="all-products-list">
-                    <img src={Gloves} className="all-products-img"></img>
-                    <div className="all-products-costs">
-                        <p className="all-products-cost-with-sale">199<span className="all-products-cost-with-sale">$</span></p>
-                        <p className="all-products-cost-without-sale">250$</p>
-                        <p className="all-products-sale">-7%</p>
-                    </div>
-                    <div className="all-products-product">Gloves (black)</div>
-                </li>
-                <li className="all-products-list">
-                    <img src={Collection} className="all-products-img"></img>
-                    <div className="all-products-costs">
-                        <p className="all-products-cost-with-sale">199<span className="all-products-cost-with-sale">$</span></p>
-                        <p className="all-products-cost-without-sale">250$</p>
-                        <p className="all-products-sale">-7%</p>
-                    </div>
-                    <div className="all-products-product">Secateurs</div>
-                </li>
-                <li className="all-products-list">
-                    <img src={Gloves} className="all-products-img"></img>
-                    <div className="all-products-costs">
-                        <p className="all-products-cost-with-sale">199<span className="all-products-cost-with-sale">$</span></p>
-                        <p className="all-products-cost-without-sale">250$</p>
-                        <p className="all-products-sale">-7%</p>
-                    </div>
-                    <div className="all-products-product">Gloves (black)</div>
-                </li>
-                <li className="all-products-list">
-                    <img src={Collection} className="all-products-img"></img>
-                    <div className="all-products-costs">
-                        <p className="all-products-cost-with-sale">199<span className="all-products-cost-with-sale">$</span></p>
-                        <p className="all-products-cost-without-sale">250$</p>
-                        <p className="all-products-sale">-7%</p>
-                    </div>
-                    <div className="all-products-product">Secateurs</div>
-                </li>
-                <li className="all-products-list">
-                    <img src={Gloves} className="all-products-img"></img>
-                    <div className="all-products-costs">
-                        <p className="all-products-cost-with-sale">199<span className="all-products-cost-with-sale">$</span></p>
-                        <p className="all-products-cost-without-sale">250$</p>
-                        <p className="all-products-sale">-7%</p>
-                    </div>
-                    <div className="all-products-product">Gloves (black)</div>
-                </li> */}
             </ul>
         </section>
     )

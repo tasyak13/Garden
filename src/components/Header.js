@@ -1,9 +1,7 @@
 import "./Header.css"
 import logo from "../img/logo.png"
 import { ReactComponent as Basket }  from "../img/bask.svg"
-import {
-    Link
-  } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function Header() {
     return (
@@ -13,8 +11,7 @@ function Header() {
             <ul className="header-list">
                 <li><Link to={"/"}>Main Page</Link></li>
                 <li><Link to={"/all-products"}>All products</Link></li>
-                <li><Link to={"/ex?showDiscount=true"}>All sales</Link></li>
-                {/* To make link to page allproducts w</li></Link>ith choice "discounted items" */}
+                <li><Link to={"/all-products?showDiscount=true"}>All sales</Link></li>
             </ul>
             <Link to={"/basket"}><Basket className="basket" /></Link>
         </header>

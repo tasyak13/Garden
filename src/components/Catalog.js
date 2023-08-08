@@ -3,13 +3,14 @@ import Fertilizer from "../img/Fertilizer.png"
 import Protective from "../img/Protective products and septic tanks.png"
 import Planting from "../img/Planting material.png"
 import Tools from "../img/Tools and Inventory.png"
+import {Link} from "react-router-dom";
 
 function Catalog() {
     return (
         <section className="container catalog">
             <div className="catalog-title">
                 <h3 className="catalog-heading">Catalog</h3>
-                <a className="catalog-link">All categories</a>
+                <Link to={"/categories"} className="catalog-link">All categories</Link>
             </div>
             <div className="catalog-list">
                 <ul className="catalog-list">

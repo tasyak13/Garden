@@ -5,6 +5,7 @@ import { useState } from 'react';
 import {Link} from "react-router-dom";
 import { useSearchParams } from 'react-router-dom';
 
+
 const baseURL = "http://localhost:3333/products/all";
 
 function AllProducts() {
@@ -15,7 +16,6 @@ function AllProducts() {
     const [showDiscount, setShowDiscount] = useState(!!searchParams.get('showDiscount'));
     const [filteredData, setFilteredData] = useState([]);
     const [sortOrder, setSortOrder] = useState('a');
-    
     const [onlySales, setOnlySales] = useState();
 
     const filterData = (post, showDiscount, input1, input2, sortOrder) => {
@@ -99,8 +99,8 @@ function AllProducts() {
                 <div className="all-products-choice-sort">
                 <p className="all-products-choice-text sort">Sorted</p>
                 <select className="all-products-choice" value={sortOrder} onChange={handleSortChange}>
-                    <option value="a">by default</option>
-                    <option value="z">ascending</option>
+                    <option value="a">ascending</option>
+                    <option value="z">by default</option>
                 </select>
                 </div>
             </div>

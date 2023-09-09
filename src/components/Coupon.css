@@ -77,6 +77,11 @@ button.coupon-button {
     color: #FFFFFF;
 }
 
+p.coupon-error {
+    padding-top: 20px;
+    color: rgb(253, 249, 14);
+}
+
 @media (max-width: 1240px) {
     section.coupon {
         justify-content: space-around;

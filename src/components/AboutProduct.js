@@ -13,14 +13,11 @@ function AboutProduct() {
 
     const addToCart = () => dispatch(allCartAction());
 
-
     let {productID} = useParams();
     const baseURL = `http://localhost:3333/products/${productID}`;
-    console.log(baseURL)
 
     const [post, setPost] = React.useState(null);
     
-
     React.useEffect(() => {
         axios.get(baseURL).then((response) => {
         setPost(response.data);
@@ -28,10 +25,6 @@ function AboutProduct() {
     }, []);
 
     if (!post) return null;
-
-    console.log(post)
-
-
 
     return (
         <section className="container product">
@@ -44,7 +37,7 @@ function AboutProduct() {
                         <p className="product-cost-without-sale">{post[0].price}$</p>
                         <p className="product-cost-sale">{(((post[0].price - post[0].discont_price) / post[0].price) * 100).toFixed(2)}%</p>
                     </div>
-                    <button className="product-button" onClick={addToCart} >To cart</button>
+                    <button className="product-button" onClick={addToCart}>To cart</button>
                     <hr className="product-line"></hr>
                     <p className="product-description-title">Description</p>
                     <p className="product-description-size">{post[0].description}</p>

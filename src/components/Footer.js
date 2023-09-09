@@ -18,11 +18,11 @@ function Footer() {
                     <div className="footer-contacts-social">
                         <ul className="footer-contacts-social-list">
                             <li className="footer-contacts-social-list-item">
-                                <Instagram />
+                                <a href="https://instagram.com/" target="_blank"><Instagram /></a>
                                 <p className="footer-contacts-social-text">Instagram</p>
                             </li>
                             <li className="footer-contacts-social-list-item">
-                                <WhatsApp />
+                                <a href="https://web.whatsapp.com/" target="_blank"><WhatsApp /></a>
                                 <p className="footer-contacts-social-text">WhatsApp</p>
                             </li>
                         </ul>
@@ -30,7 +30,7 @@ function Footer() {
                 </div>
                 <div className="footer-address">
                     <p className="footer-address-title">Address</p>
-                    <p className="footer-address-link">Linkstraße 2, 8 OG, 10785, Berlin, Deutschland</p>
+                    <a href="https://yandex.ru/maps/177/berlin/house/ZUoYdQBlSEcDQFtofXlxdntqZQ==/?ll=13.375124%2C52.507791&source=serp_navig&z=16" target="_blank"><p className="footer-address-link">Linkstraße 2, 8 OG, 10785, Berlin, Deutschland</p></a>
                     <p className="footer-address-work-hours">Working Hours:</p>
                     <p className="footer-address-text">24 hours a day</p>
                 </div>

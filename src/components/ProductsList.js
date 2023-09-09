@@ -1,6 +1,4 @@
 import "./AllProducts.css"
-import Collection from "../img/Collection for berries (plastic).png"
-import Gloves from "../img/Gloves (black).png"
 import {useParams} from "react-router-dom";
 import axios from "axios";
 import React from "react";
@@ -51,7 +49,7 @@ function ProductsList() {
             {post.data.map((p) => {
                 if(p.discont_price === null) {
                     return <li className="all-products-list">
-                    <img src={"http://localhost:3333" + p.image} className="all-products-img"></img>
+                    <Link to={"/products/" + p.id}><img src={"http://localhost:3333" + p.image} className="all-products-img"></img></Link>
                     <div className="all-products-costs">
                         <p className="all-products-cost-with-sale">{p.price}<span className="all-products-cost-with-sale">$</span></p>
                         <p className="all-products-cost-without-sale"></p>
@@ -65,7 +63,7 @@ function ProductsList() {
                 }
                 else {
                     return <li className="all-products-list">
-                    <img src={"http://localhost:3333" + p.image} className="all-products-img"></img>
+                    <Link to={"/products/" + p.id}><img src={"http://localhost:3333" + p.image} className="all-products-img"></img></Link>
                     <div className="all-products-costs">
                         <p className="all-products-cost-with-sale">{p.discont_price}<span className="all-products-cost-with-sale">$</span></p>
                         <p className="all-products-cost-without-sale">{p.price}$</p>

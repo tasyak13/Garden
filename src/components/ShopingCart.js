@@ -1,12 +1,7 @@
 import "./ShopingCart.css"
-import Bridge from "../img/Bridge.png"
-import { ReactComponent as Close }  from "../img/Close.svg"
 import { useDispatch } from 'react-redux'
 import { deleteCartAction, incrementCountAction, decrementCountAction } from "../store/reducer/cartReducer"
-import { useSelector } from 'react-redux'
-
-
-
+import { useSelector } from 'react-redux';
 
 function ShopingCart() {
 
@@ -19,15 +14,13 @@ function ShopingCart() {
     console.log(cart_state)
     console.log(total)
 
+
     return (
         <section className="container shoping-cart">
             <h3 className="shoping-cart-title">Shopping cart</h3>
             <p className="shoping-cart-back">Back to the store </p>
             <div className="shoping-cart-basket">
                 <div className="shop">
-        
-
-
                     {
                         cart_state.map((id) => {
                             if(id.discont_price === null) {                            
@@ -66,14 +59,13 @@ function ShopingCart() {
                                     </div>
                                     <div className="shoping-cart-cost">
                                         <p className="shoping-cart-cost-with-sale">{id.discont_price * id.count}<span className="shoping-cart-cost-with-sale">$</span></p>
-                                        <p className="shoping-cart-cost-without-sale">{id.price}$</p>
+                                        <p className="shoping-cart-cost-without-sale">{id.price * id.count}$</p>
                                     </div>
                                     <p className="close" onClick={() => dispatch(deleteCartAction(id.id))}>X</p>
                                 </li>
                             </ul>
                         </div>
-                        }})
-                        
+                        }})  
                     }
                 </div>
                 <div className="shoping-cart-order">

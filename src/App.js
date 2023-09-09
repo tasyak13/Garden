@@ -6,9 +6,16 @@ import Catalog from './components/Catalog';
 import Coupon from './components/Coupon';
 import ListSale from './components/List-Sale';
 import Footer from './components/Footer';
+import { useEffect, useState } from 'react';
 
 
 function App() {
+
+  const [title, setTitle] = useState("Garden");
+  useEffect(() => {
+    document.title = "Garden";
+  }, [title]);
+
   return (
     <div className="App font-montserrat">
         <Header />

@@ -4,6 +4,8 @@ import React from "react";
 import { useState } from 'react';
 import {Link} from "react-router-dom";
 import { useSearchParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux'
+import { allCartAction } from "../store/reducer/cartReducer";
 
 
 const baseURL = "http://localhost:3333/products/all";
@@ -17,6 +19,10 @@ function AllProducts() {
     const [filteredData, setFilteredData] = useState([]);
     const [sortOrder, setSortOrder] = useState('a');
     const [onlySales, setOnlySales] = useState();
+
+    const dispatch = useDispatch();
+
+    const addToCart = (p) => dispatch(allCartAction(p));
 
     const filterData = (post, showDiscount, input1, input2, sortOrder) => {
       if (!post) {
@@ -108,23 +114,29 @@ function AllProducts() {
                 {filteredData.map((id) => {
                         if(id.discont_price === null) {
                             return <li className="all-products-list">
-                            <img src={"http://localhost:3333" + id.image} alt={id.title} className="all-products-img"></img>
+                            <Link to={"/products/" + id.id}><img src={"http://localhost:3333" + id.image} alt={id.title} className="all-products-img"></img></Link>
                             <div className="all-products-costs">
                                 <p className="all-products-cost-with-sale">{id.price}<span className="all-products-cost-with-sale">$</span></p>
                                 <p className="all-products-cost-without-sale"></p>
                                 <p className="all-products-sale"></p>
                             </div>
-                            <div className="all-products-product">{id.title}</div>
+                            <Link to={"/products/" + id.id}><div className="all-products-product">{id.title}</div></Link>
+                            <button className="btn"
+                            onClick={() => addToCart(id)} 
+                              >Add to cart</button>
                             </li>
                         } else {
                         return <li className="all-products-list">
-                        <img src={"http://localhost:3333" + id.image} alt={id.title} className="all-products-img"></img>
+                        <Link to={"/products/" + id.id}><img src={"http://localhost:3333" + id.image} alt={id.title} className="all-products-img"></img></Link>
                         <div className="all-products-costs">
                             <p className="all-products-cost-with-sale">{id.discont_price}<span className="all-products-cost-with-sale">$</span></p>
                             <p className="all-products-cost-without-sale">{id.price}$</p>
                             <p className="all-products-sale">{(((id.price - id.discont_price) / id.price) * 100).toFixed(2)}%</p>
                         </div>
-                        <div className="all-products-product">{id.title}</div>
+                        <Link to={"/products/" + id.id}><div className="all-products-product">{id.title}</div></Link>
+                        <button className="btn"
+                            onClick={() => addToCart(id)} 
+                              >Add to cart</button>
                     </li>}
                 })};
             </ul>

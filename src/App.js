@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Sale from './components/Sale';
@@ -12,9 +11,9 @@ import { useEffect, useState } from 'react';
 function App() {
 
   const [title, setTitle] = useState("Garden");
-  useEffect(() => {
-    document.title = "Garden";
-  }, [title]);
+    useEffect(() => {
+      document.title = "Garden";
+    }, [title]);
 
   return (
     <div className="App font-montserrat">

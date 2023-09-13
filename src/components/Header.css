@@ -97,4 +97,23 @@ a {
     button.button-header {
         width: 125px;
 }
+
+a {
+    font-size: 12px;
+    line-height: 10px;
+    color: #000000;
+}
+
+ul.header-list {
+    margin-left: 24px;
+    align-items: center;
+}
+
+.basket {
+    margin-left: 25px;
+}
+
+header {
+    min-height: 110px;
+}
 }

@@ -151,7 +151,8 @@ p.shoping-cart-cost-without-sale {
 .close {
     width: 14px;
     height: 14px;
-    margin-left: 68px;
+    margin-left: auto;
+    margin-right: 0;
 }
 
 div.shoping-cart-order {
@@ -236,6 +237,11 @@ button.shoping-cart-order-button {
     line-height: 36px;
     text-align: center;
     color: #FFFFFF;
+}
+
+.order-error {
+    color: red;
+    padding-top: 20px;
 }
 
 @media (max-width: 1440px) {

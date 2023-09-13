@@ -5,6 +5,8 @@ import React from "react";
 import {Link} from "react-router-dom";
 import { useDispatch } from 'react-redux'
 import { allCartAction } from "../store/reducer/cartReducer";
+import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 function ProductsList() {
     let {categoriesID} = useParams();

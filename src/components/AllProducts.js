@@ -29,6 +29,8 @@ function AllProducts() {
         return
       }
 
+console.log(post)
+
       const filteredArray = post
         .filter(id => id.price >= input1 && id.price <= input2)
         .sort((a, b) => {
@@ -85,7 +87,7 @@ function AllProducts() {
         setSortOrder(value);
         filterData(post, e.target.checked, input1, input2, value);
   };
-
+  
     return (
         <section className="container all-products">
             <h3 className="all-products-title">All products</h3>
@@ -105,8 +107,8 @@ function AllProducts() {
                 <div className="all-products-choice-sort">
                 <p className="all-products-choice-text sort">Sorted</p>
                 <select className="all-products-choice" value={sortOrder} onChange={handleSortChange}>
-                    <option value="a">ascending</option>
-                    <option value="z">by default</option>
+                    <option value="a">by default</option>
+                    <option value="z">ascending</option>
                 </select>
                 </div>
             </div>

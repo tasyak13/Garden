@@ -26,7 +26,7 @@ function Coupon() {
                     <input type="tel" placeholder="+49" className="coupon-input" {...register("phone", { required: true, minLength: 13, maxLength: 13})}></input>
                     <br />
                     {errors.phone?.type === 'minLength' && <p className="coupon-error">Поле должно быть 10 символов</p>}
-                    {errors.phone?.type === 'maxLength' && <p>Поле должно быть 10 символов</p>}
+                    {errors.phone?.type === 'maxLength' && <p className="coupon-error">Поле должно быть 10 символов</p>}
                     <button className="coupon-button" type="submit">Get a discount</button>
                 </form>
             </div>

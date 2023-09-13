@@ -203,7 +203,10 @@ div.all-products-product {
 
 li.all-products-list:hover .btn{
     visibility: visible;
-   
+}
+
+li.all-products-list:focus .btn{
+    visibility: visible;
 }
 
 @media (max-width: 1100px) {
